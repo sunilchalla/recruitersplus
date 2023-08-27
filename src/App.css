@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+.login_background{
+  background-image: url(./assets/Rectangle\ 4.png);
+  background-size: cover;
+}
+.c-white{
+  color: white;
+}
+.fw-700{
+  font-weight: 700;
+}
+.wrapper {
+  position:relative;
+}
+
+
+.resend_line{
+  float: right;
+  font-size: 10px;
+}
+.input {
+  height: 50px;
+  box-sizing:border-box;
+  padding-left: 1.5rem;
+}
+.form-input-custom .input-group-text{
+  background: white;
+    border-right: none;
+}
+.form-input-custom input{
+  border-left: none;
+  font-size: 12px;
+}
+.form-input-custom .form-control:focus{
+  box-shadow:none;
+  border-color: #dee2e6;
+}
