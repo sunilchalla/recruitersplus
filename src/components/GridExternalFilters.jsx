@@ -39,8 +39,8 @@ const GridExternalFilters = ({onFilterChangeHadler,filtersSelectedValues,createM
             return <option>{i.name}</option>;
           })}
         </select>
-        <button onClick={()=>createMeetingHandler()}> Create Meeting</button>
-        <button onClick={()=>rescheduleHandler()}> Reschedule</button>
+        <button className='primary' onClick={()=>createMeetingHandler()}> Create Meeting</button>
+        <button className='primary' onClick={()=>rescheduleHandler()}> Reschedule</button>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const MainLayout = (children) => {
       <div className="row">
         <Navbar />
       </div>
-      <div className="row">
+      <div className="">
         <Routes>
           <Route path="/login" element={<Navigate to="/dashboard" />} />
           {appRoutes?.map((eachRoute) => {

@@ -36,39 +36,72 @@
     transform: rotate(360deg);
   }
 }
-.login_background{
+.login_background {
   background-image: url(./assets/Rectangle\ 4.png);
   background-size: cover;
 }
-.c-white{
+.c-white {
   color: white;
 }
-.fw-700{
+.fw-700 {
   font-weight: 700;
 }
 .wrapper {
-  position:relative;
+  position: relative;
 }
 
-
-.resend_line{
+.resend_line {
   float: right;
   font-size: 10px;
 }
 .input {
   height: 50px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   padding-left: 1.5rem;
 }
-.form-input-custom .input-group-text{
+.form-input-custom .input-group-text {
   background: white;
-    border-right: none;
+  border-right: none;
 }
-.form-input-custom input{
+.form-input-custom input {
   border-left: none;
   font-size: 12px;
 }
-.form-input-custom .form-control:focus{
-  box-shadow:none;
+.form-input-custom .form-control:focus {
+  box-shadow: none;
   border-color: #dee2e6;
+}
+.user_circle {
+  background: #dfdada;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 3px 10px;
+}
+.d-flex {
+  display: flex;
+}
+.d-grid {
+  display: grid;
+}
+.primary-color {
+  color: #ff4436;
+}
+.status-card {
+  width: 70%;
+  margin: auto;
+}
+.s-cards {
+  padding: 10px;
+}
+.icon_block {
+  font-size: 30px;
+  color: #1d0096;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px 0;
+}
+.count_block{
+font-size: 20px;  
+  padding: 10px 0;
 }
