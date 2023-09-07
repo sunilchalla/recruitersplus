@@ -1,13 +1,11 @@
 import React from "react";
-import createMeeting from "./pages/newMeeting/createMeeting";
-import JobDescription from "./pages/jobDescriptions/JobDescription";
-import PaneList from "./pages/panelist/PaneList";
 const Login = React.lazy(() => import("./pages/login/Login"));
-const Registration = React.lazy(() =>
-  import("./pages/registration/Registration")
-);
+const Registration = React.lazy(() =>import("./pages/registration/Registration"));
 const Dashboard = React.lazy(() => import("./pages/dashboard/Dashboard"));
-
+const CreateMeeting = React.lazy(() =>import("./pages/newMeeting/CreateMeeting"));
+const JobDescription = React.lazy(() =>import("./pages/jobDescriptions/JobDescription"));
+const PaneList = React.lazy(() => import("./pages/panelist/PaneList"));
+const PreviewMeeting = React.lazy(()=>import("./pages/previewMeeting/PreviewMeeting"))
 const appRoutes = [
   {
     path: "/login",
@@ -27,7 +25,7 @@ const appRoutes = [
   {
     path: "/newmeeting",
     name: "Schedule Meeting",
-    component: createMeeting,
+    component: CreateMeeting,
   },
   {
     path: "/jobdescriptions",
@@ -38,6 +36,11 @@ const appRoutes = [
     path: "/panelist",
     name: "Panelist",
     component: PaneList,
+  },
+  {
+    path: "/meeting/:id",
+    name: "Meeting",
+    component: PreviewMeeting,
   },
 ];
 export default appRoutes;

@@ -4,7 +4,7 @@ import JobDetailsCard from "../../components/ScheduleInterview/JobDetailsCard";
 import AdditionalDetailsCard from "../../components/ScheduleInterview/AdditionalDetailsCard";
 import { setHistory } from "../../utilities/historyHandler";
 
-const createMeeting = () => {
+const CreateMeeting = () => {
   const handleOnSchedule = () => {
     setHistory("/dashboard");
   };
@@ -37,4 +37,4 @@ const createMeeting = () => {
   );
 };
 
-export default createMeeting;
+export default CreateMeeting;
