@@ -27,7 +27,7 @@ const Dashboard = () => {
   ];
 
   const createMeetingHandler = () => {
-    setHistory("/scheduleInterview")
+    setHistory("/newmeeting")
   };
 
   const rescheduleHandler = () => {};

@@ -15,6 +15,7 @@ const MainLayout = (children) => {
       <div className="">
         <Routes>
           <Route path="/login" element={<Navigate to="/dashboard" />} />
+          <Route path="/" element={<Navigate to="/dashboard" />} />
           {appRoutes?.map((eachRoute) => {
             return (
               <Route path={eachRoute.path} element={<eachRoute.component />} />
