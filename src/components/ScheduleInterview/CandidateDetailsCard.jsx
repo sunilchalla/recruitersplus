@@ -1,6 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser
+} from "@fortawesome/free-solid-svg-icons";
 const CandidateDetailsCard = ({setInterviewDetails}) => {
   const interviewDetails = useSelector(state=>state.BOOKING)
   const dispatch = useDispatch()
@@ -11,9 +14,9 @@ const CandidateDetailsCard = ({setInterviewDetails}) => {
    }
 
   return (
-    <div>
+    <div className='p-3'>
       <div className="row">
-        <h2>Candidate Details</h2>
+        <h5> <FontAwesomeIcon icon={faUser} /> Candidate Details</h5>
       </div>
       <div className="row">
         <div className="col">

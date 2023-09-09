@@ -17,18 +17,21 @@ const CreateMeeting = () => {
   };
   return (
     <div>
-      <div className="row">
-        <h1> Schedule an Interview</h1>
-        <p>Choose the date for a Perfect Call</p>
+      <div className="row py-3">
+        <div className="text-center">
+        <h5 className="primary-color mb-0"> Schedule an Interview</h5>
+        <small>Choose the date for a Perfect Call</small>
+        </div>
+        
       </div>
-      <div className="row">
-        <div className="col-12">
+      <div className="row interview-container mx-auto">
+        <div className="col-12 card my-2">
           <CandidateDetailsCard />
         </div>
-        <div className="col-12">
+        <div className="col-12 card my-2">
           <JobDetailsCard />
         </div>
-        <div className="col-12">
+        <div className="col-12 card my-2">
           <AdditionalDetailsCard />
         </div>
       </div>

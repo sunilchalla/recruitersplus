@@ -2,7 +2,7 @@ import React from "react";
 
 const AdditionalDetailsCard = ({ interviewDetails, setInterviewDetails }) => {
   return (
-    <div>
+    <div className="p-3">
       <div className="row">
         <div className="col-4">
           <label>Category</label>

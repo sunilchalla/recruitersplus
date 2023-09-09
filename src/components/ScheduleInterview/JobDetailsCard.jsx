@@ -2,7 +2,7 @@ import React from 'react'
 
 const JobDetailsCard = ({interviewDetails,setInterviewDetails}) => {
   return (
-    <div>
+    <div className='p-3'>
         <div className="row">
             <label>Choose Job Description</label>
             <select>

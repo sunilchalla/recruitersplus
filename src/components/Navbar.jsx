@@ -32,8 +32,8 @@ const Navbar = () => {
   ];
   const activePath = window.location.pathname;
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="p-0 nav-shadow">
+      <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
           <button
             class="navbar-toggler"

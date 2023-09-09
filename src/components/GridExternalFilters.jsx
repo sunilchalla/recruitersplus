@@ -20,27 +20,27 @@ const GridExternalFilters = ({onFilterChangeHadler,filtersSelectedValues,createM
      }
   return (
     <div className="row">
-      <div className="col-2">
-        <input placeholder="Search" />
+      <div className="col-3">
+        <input placeholder="Search" className='w-100' />
       </div>
-      <div className="col-8 offset-2">
-        <select>
+      <div className="col-7 offset-2 text-right">
+        <select className='filter-select'>
           {statusList.map((i) => {
             return <option>{i.name}</option>;
           })}
         </select>
-        <select>
+        <select className='filter-select'>
           {statusList.map((i) => {
             return <option>{i.name}</option>;
           })}
         </select>
-        <select>
+        <select className='filter-select'>
           {statusList.map((i) => {
             return <option>{i.name}</option>;
           })}
         </select>
-        <button className='primary' onClick={()=>createMeetingHandler()}> Create Meeting</button>
-        <button className='primary' onClick={()=>rescheduleHandler()}> Reschedule</button>
+        <button className='rp-primary' onClick={()=>createMeetingHandler()}> Create Meeting</button>
+        <button className='rp-secondary' onClick={()=>rescheduleHandler()}> Reschedule</button>
       </div>
     </div>
   );
