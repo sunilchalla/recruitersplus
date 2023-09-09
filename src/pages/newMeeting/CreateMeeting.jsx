@@ -3,10 +3,13 @@ import CandidateDetailsCard from "../../components/ScheduleInterview/CandidateDe
 import JobDetailsCard from "../../components/ScheduleInterview/JobDetailsCard";
 import AdditionalDetailsCard from "../../components/ScheduleInterview/AdditionalDetailsCard";
 import { setHistory } from "../../utilities/historyHandler";
+import { useDispatch } from "react-redux";
 
 const CreateMeeting = () => {
+  const dispatch = useDispatch()
   const handleOnSchedule = () => {
-    setHistory("/dashboard");
+    dispatch({ type: "CREATE_MEETING" });
+    // setHistory("/dashboard");
   };
 
   const handleDraftSave = () => {

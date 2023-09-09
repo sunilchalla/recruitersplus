@@ -32,7 +32,7 @@ const AdditionalDetailsCard = ({ interviewDetails, setInterviewDetails }) => {
         </div>
         <div className="col-4">
           <label>Date & Time</label>
-          <input type="date" placeholder="Enter Your Experience" />
+          <input type="datetime-local" placeholder="Enter Your Experience" />
         </div>
         <div className="col-4">
           <label>Timezone</label>

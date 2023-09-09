@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { all } from "redux-saga/effects";
 import recruiterSaga from "./actions/recruiter.saga";
 import rootReducer from "./reducers/rootReducer";
+import bookingsSaga from "./actions/booking.saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -12,6 +13,6 @@ export const store = configureStore({
 });
 
 function* rootSaga() {
-  yield all([recruiterSaga()]);
+  yield all([recruiterSaga(),bookingsSaga()]);
 }
 sagaMiddleware.run(rootSaga);
