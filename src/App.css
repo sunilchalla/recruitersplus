@@ -13,8 +13,8 @@
   }
 }
 body{
-  font-size: 14px;
-background: #F8F9FB;
+  font-size: 14px !important;
+background: #F8F9FB !important;
 }
 .App-header {
   background-color: #282c34;
@@ -87,7 +87,7 @@ background: #F8F9FB;
   display: grid;
 }
 .primary-color {
-  color: #ff4436;
+  color: #ff4436 !important;
 }
 .status-card {
   width: 70%;
@@ -98,6 +98,9 @@ background: #F8F9FB;
 }
 .interview-container{
   width: 60%;
+}
+.c-blue{
+  color: #004FB7;
 }
 .icon_block {
   font-size: 30px;
@@ -153,4 +156,65 @@ font-size: 20px;
 }
 .nav-shadow{
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+.candidate_details input{
+  width: 91%;
+  padding: 8px;
+  border: 1px solid #B8B8B8;
+}
+.candidate_details select{
+  width: 91%;
+  padding: 8px;
+  border: 1px solid #B8B8B8;
+}
+.candidate_details textarea{
+  width: 95%;
+  border: 1px solid #B8B8B8;
+  padding: 8px;
+}
+#fileInput{
+  display: none;
+}
+#icon{
+  width: 100px;
+  cursor: pointer;
+}
+.file_upload{
+  background-color: #E0E0E0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 4px;
+}
+.selected-card{
+  background: aliceblue;
+  border-radius: 4px;
+}
+.jd-changes:focus-visible{
+  outline: none;
+}
+.pad-right-5{
+  padding-right: 5px;
+}
+.status-online{
+  color: #1BC100;
+}
+.status-offline{
+  color: #FF4436;
+}
+.br-2{
+  border-radius: 2px !important;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  margin: 10px 0;
+}
+.due-in{
+  color: #3939CD;
+}
+.table-header th{
+  color: #858585 !important;
+  font-weight: 400;
+}
+table th,td{
+  padding: 1.5rem 0.5rem !important;
 }

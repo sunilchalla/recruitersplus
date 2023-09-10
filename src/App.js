@@ -5,6 +5,7 @@ import PageLoading from "./components/PageLoading";
 import Login from "./pages/login/Login";
 import { Registration } from "./pages/registration/Registration";
 import MainLayout from "./MainLayout";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   // will update with actual user logged context

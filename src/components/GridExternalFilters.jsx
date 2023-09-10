@@ -1,4 +1,6 @@
 import React from 'react'
+import { faPlus, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GridExternalFilters = ({onFilterChangeHadler,filtersSelectedValues,createMeetingHandler,rescheduleHandler}) => {
     const statusList = [
@@ -39,10 +41,12 @@ const GridExternalFilters = ({onFilterChangeHadler,filtersSelectedValues,createM
             return <option>{i.name}</option>;
           })}
         </select>
-        <button className='rp-primary' onClick={()=>createMeetingHandler()}> Create Meeting</button>
-        <button className='rp-secondary' onClick={()=>rescheduleHandler()}> Reschedule</button>
+        <button className='rp-primary' onClick={()=>createMeetingHandler()}> <FontAwesomeIcon icon={faPlus} /> Create Meeting</button>
+        <button className='rp-secondary' onClick={()=>rescheduleHandler()}> <FontAwesomeIcon icon={faRedo} /> Reschedule</button>
       </div>
+      
     </div>
+    
   );
 }
 

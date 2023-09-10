@@ -35,9 +35,12 @@ const CreateMeeting = () => {
           <AdditionalDetailsCard />
         </div>
       </div>
-      <div className="row">
-        <button onClick={() => handleOnSchedule()}>Schedule</button>
-        <button onClick={() => handleDraftSave()}>Save as A Draft</button>
+      <div className="row pb-5">
+<div className="col-md-4 offset-md-4 text-center">
+<button className="rp-primary" onClick={() => handleOnSchedule()}>Schedule</button>
+        <button className="rp-secondary" onClick={() => handleDraftSave()}>Save as A Draft</button>
+</div>
+        
       </div>
     </div>
   );

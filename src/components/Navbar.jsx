@@ -33,7 +33,7 @@ const Navbar = () => {
   const activePath = window.location.pathname;
   return (
     <div className="p-0 nav-shadow">
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg " style={{background: 'white'}}>
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -58,7 +58,7 @@ const Navbar = () => {
                     }`}
                   >
                     <Link className="nav-link" to={i.to}>
-                      <FontAwesomeIcon icon={i.icon} />
+                      <FontAwesomeIcon icon={i.icon} className="px-2" />
                       {i.name}
                     </Link>
                   </li>
