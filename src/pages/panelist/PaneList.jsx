@@ -67,10 +67,10 @@ const PaneList = ({ onFilterChangeHadler, filtersSelectedValues, createMeetingHa
             <div class="modal-body">
               <div className='candidate_details'>
                 <div className="row">
-                  <div className="col">
+                  <div className="col-md-6  pt-3">
                     <div className='row'>
                       <div className='col-md-12'>
-                        <label className='c-blue'>Name</label>
+                        <label className='c-blue'>First Name</label>
                       </div>
                       <div className='col-md-12'>
                         <input
@@ -79,7 +79,31 @@ const PaneList = ({ onFilterChangeHadler, filtersSelectedValues, createMeetingHa
                       </div>
                     </div>
                   </div>
-                  <div className="col">
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Last Name</label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The Candidate Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Display Name</label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The Candidate Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6  pt-3">
                     <div className='row'>
                       <div className="col-md-12">
                         <label className='c-blue'>Mobile Number</label>
@@ -93,7 +117,7 @@ const PaneList = ({ onFilterChangeHadler, filtersSelectedValues, createMeetingHa
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col pt-3">
+                  <div className="col-md-6 pt-3">
                     <div className="row">
                       <div className="col-md-12">
                         <label className='c-blue'>Email ID</label>
@@ -105,10 +129,22 @@ const PaneList = ({ onFilterChangeHadler, filtersSelectedValues, createMeetingHa
                       </div>
                     </div>
                   </div>
-                  <div className="col pt-3">
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Experience</label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The Candidate Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 pt-3">
                     <div className="row">
                       <div className="col-md-12">
-                        <label className='c-blue'>Category</label>
+                        <label className='c-blue'>Designation</label>
                       </div>
                       <div className="col-md-12">
                         <select name="" id="">
@@ -118,12 +154,62 @@ const PaneList = ({ onFilterChangeHadler, filtersSelectedValues, createMeetingHa
                       </div>
                     </div>
                   </div>
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Organizarion </label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The Candidate Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Organization Mail</label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The Candidate Name"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6  pt-3">
+                    <div className='row'>
+                      <div className='col-md-12'>
+                        <label className='c-blue'>Location </label>
+                      </div>
+                      <div className='col-md-12'>
+                        <input
+                          placeholder="Enter The location"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6  pt-3">
+                    <div className="row">
+                      <div className="col-md-12">
+                        <label className="c-blue">Timezone</label>
+                      </div>
+                      <div className="col-md-12">
+                        <select>
+                          {["Select Your Timezone", 1, 2, 3, 4].map((i) => {
+                            return <option key={i}>{i}</option>;
+                          })}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className='text-center p-3'>
-              <button type="button" class="rp-primary">Add Panelist</button>
-              <button type="button" class="rp-secondary" data-bs-dismiss="modal">Close</button>
-      
+                <button type="button" class="rp-primary">Add Panelist</button>
+                <button type="button" class="rp-secondary" data-bs-dismiss="modal">Close</button>
+
               </div>
             </div>
           </div>
