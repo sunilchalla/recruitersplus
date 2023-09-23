@@ -155,6 +155,14 @@ const AdditionalDetailsCard = ({ interviewDetails, setInterviewDetails }) => {
         </div>
 
       </div>
+      <div className="row">
+      <div className="col-md-12">
+          <label className="c-blue">Add Comments</label>
+        </div>
+        <div className="col-md-12">
+          <textarea name="addcomments" id="comments" cols="30" rows="10"></textarea>
+        </div>
+      </div>
     </div>
   );
 };
