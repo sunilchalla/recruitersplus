@@ -160,7 +160,7 @@ const AdditionalDetailsCard = ({ interviewDetails, setInterviewDetails }) => {
           <label className="c-blue">Add Comments</label>
         </div>
         <div className="col-md-12">
-          <textarea name="addcomments" id="comments" cols="30" rows="10"></textarea>
+          <textarea className="w-100" name="addcomments" id="comments" cols="30" rows="4"></textarea>
         </div>
       </div>
     </div>
