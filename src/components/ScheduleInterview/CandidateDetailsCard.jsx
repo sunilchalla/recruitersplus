@@ -22,7 +22,25 @@ const CandidateDetailsCard = ({ setInterviewDetails }) => {
         <div className="col">
           <div className='row'>
             <div className='col-md-12'>
-              <label className='c-blue'>Name</label>
+              <label className='c-blue'>First Name</label>
+            </div>
+            <div className='col-md-12'>
+              <input
+                placeholder="Enter The Candidate Name"
+                value={interviewDetails?.candiateName || ""}
+                onChange={(e) =>
+                  handleCandidateChanges("candiateName", e.target.value)
+                }
+              />
+            </div>
+          </div>
+
+
+        </div>
+        <div className="col">
+          <div className='row'>
+            <div className='col-md-12'>
+              <label className='c-blue'>Last Name</label>
             </div>
             <div className='col-md-12'>
               <input
