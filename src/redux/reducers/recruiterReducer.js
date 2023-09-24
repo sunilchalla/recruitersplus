@@ -6,7 +6,27 @@ const actionTypes = Object.freeze({
   CLEAR_USER: "CLEAR_USER",
 });
 
-export default function recruiterReducer(state = null, action) {
+export default function recruiterReducer(
+  state = {
+    userId: "RECR-1",
+    firstName: "Chandbasha",
+    lastName: "Shaik",
+    displayName: "Chand",
+    email: "shaikchandbasha@gmail.com",
+    phone: "+917386053148",
+    organization: "PULSAR Corp",
+    designation: "Senior Recruiter",
+    location: "Hyd",
+    category: "RECRUITER",
+    role: "ADMIN",
+    vendorId: "PULSA-29",
+    vendorName: "PULSAR Corp",
+    active: false,
+    token: "UQhDLTpeSz",
+    submitterId: "RECR-1",
+  },
+  action
+) {
   switch (action.type) {
     case actionTypes.SET_USER: // LOGIN
       return { ...action.payload };

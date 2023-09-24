@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 
 const API_HOST = "http://bookingservices-env.eba-z3vieews.us-east-1.elasticbeanstalk.com";
 
+
 async function request(url, params, method = "GET", resType = "json") {
   const options = {
     method,
