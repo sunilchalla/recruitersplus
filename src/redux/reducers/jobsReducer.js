@@ -11,7 +11,9 @@ export default function jobsReducer(
     {
       jobId: "JOBD-6",
       jobName: "TEST-1",
-      jobDescription: "TEST Description",
+      jobDescription:
+        "<p>something about the job<br><strong>KEY RESPONSIBILITES:</strong></p><ul><li>responsibility-1</li><li>responsibility-2</li><li>responsibility-3</li></ul>",
+
       jobLocation: "Hyd",
       jobType: "ui_developer",
       jobStatus: "open",
@@ -24,7 +26,9 @@ export default function jobsReducer(
     {
       jobId: "JOBD-7",
       jobName: "TEST-2",
-      jobDescription: "TEST Description",
+      jobDescription:
+        "<p>something about the job<br><strong>KEY RESPONSIBILITES:</strong></p><ul><li>responsibility-1</li><li>responsibility-2</li><li>responsibility-3</li></ul>",
+
       jobLocation: "Hyd",
       jobType: "ui_developer",
       jobStatus: "open",
@@ -36,14 +40,15 @@ export default function jobsReducer(
     },
     {
       jobId: "JOBD-8",
-      jobName: "TEST-3",
-      jobDescription: "TEST Description",
-      jobLocation: "Hyd",
+      jobName: "TEST-4",
+      jobDescription:
+        "<p>something about the job<br><strong>KEY RESPONSIBILITES:</strong></p><ul><li>responsibility-1</li><li>responsibility-2</li><li>responsibility-3</li></ul>",
+      jobLocation: "BZA",
       jobType: "ui_developer",
       jobStatus: "open",
-      jobStartDate: "2023-09-25",
+      jobStartDate: "2023-09-20",
       jobEndDate: "2023-10-02",
-      positions: 5,
+      positions: 2,
       vendorId: "PULSA-29",
       vendorName: "PULSA Corp",
     },

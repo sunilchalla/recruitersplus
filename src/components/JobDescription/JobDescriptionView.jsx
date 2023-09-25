@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
+import parse from "html-react-parser";
+import moment from "moment";
 
 const JobDescriptionView = ({ job }) => {
+
+
   return (
     <div className="card p-3">
       <div className="row">
         <div className="col-12">
           <h4 className="c-blue"> {job?.jobName}</h4>
-          <p>{job?.jobDescription}</p>
+          {/* <p>{job?.jobDescription}</p> */}
         </div>
       </div>
       <div className="row">
@@ -32,9 +36,12 @@ const JobDescriptionView = ({ job }) => {
         <div className="col-md-9">
           <h5 className="c-blue">Description</h5>
         </div>
-        <div className="col-md-3 text-right">1 day ago</div>
+        <div className="col-md-3 text-right">
+          {`${moment().diff(moment(job?.jobStartDate), "days")}`} day ago
+        </div>
         <div className="col-md-12">
-          <p>
+          {parse(job?.jobDescription)}
+          {/* <p>
             Work as a member of a team specializing in design, build and test of
             responsive user interfaces, SPAs & websites using Angular framework.
             Develop high quality and scalable enterprise applications with
@@ -59,11 +66,11 @@ const JobDescriptionView = ({ job }) => {
               independently.
             </li>
             <li>Must be able to bring in innovation</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default JobDescriptionView
+export default JobDescriptionView;

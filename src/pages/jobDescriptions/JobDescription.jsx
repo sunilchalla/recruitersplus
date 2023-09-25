@@ -10,7 +10,9 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const JobDescription = () => {
   const animatedComponents = makeAnimated();
   const dispatch = useDispatch();
-  const jobs = useSelector(state=>state.JOBS_DETAILS)
+  const jobs = useSelector((state) => state.JOBS_DETAILS);
+  const [filteredJobs, setFilteredJobs] = useState(jobs);
+  const [filterValue, setFilterValue] = useState("");
 
   const jobDescriptionsList = [
     {
@@ -62,7 +64,7 @@ const JobDescription = () => {
   const [jobDetails, setJobDetails] = useState({});
 
   const [jobDetailsFormErrors, setJobDetailsFormErrors] = useState([]);
-  const [activeJob, setActiveJob] = useState(jobs[0] || {});
+  const [activeJob, setActiveJob] = useState(filteredJobs[0] || {});
 
   const onJobChangeHandler = (key, value) => {
     setJobDetails((prev) => {
@@ -71,7 +73,6 @@ const JobDescription = () => {
   };
 
   const getSkillsValues = (list) => {
-    console.log(list);
     const newSkills = list?.map((i) => {
       let temp = skillSet.find((j) => j.value === i);
       return temp;
@@ -90,11 +91,23 @@ const JobDescription = () => {
 
   useEffect(() => {
     dispatch({ type: "GET_ALL_JOB_DETAILS" });
+  }, []);
 
-  }, [])
-  
+  const filterJobs = (data) => {
+    if(data.length>0){
+       const tempJobs = [...jobs].filter((i) => i?.skills?.includes(data));
+       setFilterValue(data);
+       setFilteredJobs(tempJobs);
+       setActiveJob(tempJobs[0]);
+    }
+  };
 
-  console.log(jobDetails);
+  const renderFirstDescElement = (data) => { 
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = data;
+    const newData = tempDiv?.firstChild.innerText;
+    return newData
+   }
   return (
     <div>
       <div className="row py-3">
@@ -106,11 +119,14 @@ const JobDescription = () => {
                   name=""
                   id=""
                   className="p-2 jd-changes"
+                  value={filterValue}
+                  contains
+                  // onChange={(e) => filterJobs(e.target.value)}
                   style={{ border: "none", fontWeight: "600" }}
                 >
-                  <option value="all">All Job Descriptions</option>
+                  <option value="">All Job Descriptions</option>
                   <option value="angular">Angular</option>
-                  <option value="react">ReactJs</option>
+                  <option value="reactjs">ReactJs</option>
                 </select>
               </div>
               <div className="col-md-4">
@@ -127,12 +143,12 @@ const JobDescription = () => {
 
             <hr />
             <div className="row px-3">
-              {jobs.map((job) => {
+              {filteredJobs.map((job) => {
                 return (
                   <div key={job.jobId} onClick={() => setActiveJob(job)}>
                     <div className="col-md-12 my-2 p-2 selected-card">
                       <p className="primary-color mb-1">{job?.jobName}</p>
-                      <span>{job?.jobDescription}</span>
+                      <div>{renderFirstDescElement(job?.jobDescription)}</div>
                     </div>
                     <hr />
                   </div>
@@ -142,7 +158,7 @@ const JobDescription = () => {
           </div>
         </div>
         <div className="col-9">
-          <JobDescriptionView job={activeJob} />
+          {activeJob && <JobDescriptionView job={activeJob} />}
         </div>
       </div>
       <div
@@ -186,7 +202,6 @@ const JobDescription = () => {
                   </div>
                   <div className="col ">
                     <div className="row">
-                      jobDescription
                       <div className="col-md-12">
                         <label className="c-blue">Category</label>
                       </div>
