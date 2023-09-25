@@ -43,7 +43,7 @@ function* getAllPanelist(action) {
 
 function* jobSaga() {
   yield takeEvery(panelistSagaTypes.CREATE_NEW_PANELIST, createPanelist);
-  yield takeEvery(panelistSagaTypes.Z, getAllPanelist);
+  yield takeEvery(panelistSagaTypes.GET_ALL_PANELIST, getAllPanelist);
 }
 
 export default jobSaga;

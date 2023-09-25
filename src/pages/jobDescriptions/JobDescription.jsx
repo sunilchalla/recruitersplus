@@ -1,34 +1,15 @@
 import React, { useEffect, useState } from "react";
 import JobDescriptionView from "../../components/JobDescription/JobDescriptionView";
-import { faPlus, faRedo } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Select from "react-select";
-import makeAnimated from "react-select/animated";
 import { useDispatch, useSelector } from "react-redux";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const JobDescription = () => {
-  const animatedComponents = makeAnimated();
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.JOBS_DETAILS);
   const [filteredJobs, setFilteredJobs] = useState(jobs);
   const [filterValue, setFilterValue] = useState("");
-
-  const jobDescriptionsList = [
-    {
-      jobId: "1",
-      jobName: "Job - 1",
-      jobDescription: "Job Description",
-      jobLocation: "Hyderbad",
-      jobType: "Developer",
-      jobStatus: "open",
-      jobStartDate: "10-10-2023",
-      jobEndDate: "10-12-2023",
-      positions: 0,
-      vendorId: "1",
-      vendorName: "Vendor-1",
-    },
-  ];
   const skillSet = [
     { value: "java", label: "Java" },
     { value: "angular", label: "Angular" },
@@ -48,7 +29,6 @@ const JobDescription = () => {
     { label: "Closed", value: "close", id: 3 },
     { label: "Cancalled", value: "cancalled", id: 4 },
   ];
-
   const jobCategories = [
     {
       label: "UI Developer",
@@ -72,13 +52,6 @@ const JobDescription = () => {
     });
   };
 
-  const getSkillsValues = (list) => {
-    const newSkills = list?.map((i) => {
-      let temp = skillSet.find((j) => j.value === i);
-      return temp;
-    });
-    return newSkills;
-  };
 
   const validateJobDetailsForm = () => {
     return true;
@@ -145,7 +118,11 @@ const JobDescription = () => {
             <div className="row px-3">
               {filteredJobs.map((job) => {
                 return (
-                  <div key={job.jobId} onClick={() => setActiveJob(job)}>
+                  <div
+                    key={job.jobId}
+                    onClick={() => setActiveJob(job)}
+                    className="cursor-pointer"
+                  >
                     <div className="col-md-12 my-2 p-2 selected-card">
                       <p className="primary-color mb-1">{job?.jobName}</p>
                       <div>{renderFirstDescElement(job?.jobDescription)}</div>
@@ -350,25 +327,6 @@ const JobDescription = () => {
                       onFocus={(event, editor) => {
                         // console.log("Focus.", editor);
                       }}
-                    />
-                  </div>
-                </div>
-                <div className="row pt-3">
-                  <div className="col-md-12">
-                    <label className="c-blue">Skills</label>
-                  </div>
-                  <div className="col-md-12">
-                    <Select
-                      closeMenuOnSelect={false}
-                      value={getSkillsValues(jobDetails?.skills) || []}
-                      onChange={(e) => {
-                        const tempSkills = [...e].map((i) => i.value);
-                        onJobChangeHandler("skills", tempSkills);
-                      }}
-                      components={animatedComponents}
-                      // defaultValue={[skillSet[4], skillSet[5]]}
-                      isMulti={true}
-                      options={skillSet}
                     />
                   </div>
                 </div>
