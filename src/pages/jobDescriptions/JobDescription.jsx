@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { useDispatch, useSelector } from "react-redux";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const JobDescription = () => {
   const animatedComponents = makeAnimated();
   const dispatch = useDispatch();
@@ -125,23 +127,22 @@ const JobDescription = () => {
 
             <hr />
             <div className="row px-3">
-              {jobs.map((job)=>{
-                 return (
-                   <div key={job.jobId} onClick={() => setActiveJob(job)}>
-                     <div className="col-md-12 my-2 p-2 selected-card">
-                       <p className="primary-color mb-1">{job?.jobName}</p>
-                       <span>{job?.jobDescription}</span>
-                     </div>
-                     <hr />
-                   </div>
-                 );
+              {jobs.map((job) => {
+                return (
+                  <div key={job.jobId} onClick={() => setActiveJob(job)}>
+                    <div className="col-md-12 my-2 p-2 selected-card">
+                      <p className="primary-color mb-1">{job?.jobName}</p>
+                      <span>{job?.jobDescription}</span>
+                    </div>
+                    <hr />
+                  </div>
+                );
               })}
-              
             </div>
           </div>
         </div>
         <div className="col-9">
-          <JobDescriptionView job={activeJob}/>
+          <JobDescriptionView job={activeJob} />
         </div>
       </div>
       <div
@@ -185,6 +186,7 @@ const JobDescription = () => {
                   </div>
                   <div className="col ">
                     <div className="row">
+                      jobDescription
                       <div className="col-md-12">
                         <label className="c-blue">Category</label>
                       </div>
@@ -315,12 +317,25 @@ const JobDescription = () => {
                     <label className="c-blue">Job Description</label>
                   </div>
                   <div className="col-md-12">
-                    <textarea
-                      value={jobDetails?.jobDescription || ""}
-                      onChange={(e) =>
-                        onJobChangeHandler("jobDescription", e.target.value)
-                      }
-                    ></textarea>
+                    <CKEditor
+                      editor={ClassicEditor}
+                      data={jobDetails?.jobDescription || ""}
+                      onReady={(editor) => {
+                        // You can store the "editor" and use when it is needed.
+                        // console.log("Editor is ready to use!", editor);
+                      }}
+                      onChange={(event, editor) => {
+                        const data = editor.getData();
+                        onJobChangeHandler("jobDescription", data);
+                        // console.log({ event, editor, data });
+                      }}
+                      onBlur={(event, editor) => {
+                        // console.log("Blur.", editor);
+                      }}
+                      onFocus={(event, editor) => {
+                        // console.log("Focus.", editor);
+                      }}
+                    />
                   </div>
                 </div>
                 <div className="row pt-3">
