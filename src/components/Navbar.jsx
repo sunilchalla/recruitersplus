@@ -9,6 +9,7 @@ import {
   faHouse,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 const Navbar = () => {
   const navLinks = [
     {
@@ -31,9 +32,11 @@ const Navbar = () => {
     },
   ];
   const activePath = window.location.pathname;
+  const dispatch = useDispatch()
+  const user = useSelector((store) => store.RECRUITER);
   return (
     <div className="p-0 nav-shadow">
-      <nav class="navbar navbar-expand-lg " style={{background: 'white'}}>
+      <nav class="navbar navbar-expand-lg " style={{ background: "white" }}>
         <div class="container-fluid">
           <button
             class="navbar-toggler"
@@ -70,8 +73,8 @@ const Navbar = () => {
                 <span>DP</span>
               </div>
               <div className="d-grid">
-                <span>Durga Pavan</span>
-                <a>Edit Profile</a>
+                <span>{user?.displayName}</span>
+                <a onClick={() => dispatch({ type: "LOGOUT_USER" })}>Log Out</a>
               </div>
             </span>
           </div>

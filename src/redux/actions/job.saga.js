@@ -10,10 +10,11 @@ export const recruiterSagaTypes = Object.freeze({
 });
 
 function* createJobDetails(action) {
+   const user = yield select((store) => store.RECRUITER);
   try {
     toast.info("Creating new Meeting");
     const response = yield call(() =>
-      jobRepository.createJobDetails(action.payload)
+      jobRepository.createJobDetails({...action.payload,vendorId:user.vendorId})
     );
     if (response?.status === "error") {
       return toast.error("unable to create job details. Please try again.");

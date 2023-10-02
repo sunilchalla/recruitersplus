@@ -5,6 +5,7 @@ import recruiterSaga from "./actions/recruiter.saga";
 import rootReducer from "./reducers/rootReducer";
 import bookingsSaga from "./actions/booking.saga";
 import jobSaga from "./actions/job.saga";
+import panelistSaga from "./actions/panelist.saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,6 +15,6 @@ export const store = configureStore({
 });
 
 function* rootSaga() {
-  yield all([recruiterSaga(),bookingsSaga(),jobSaga()]);
+  yield all([recruiterSaga(),bookingsSaga(),jobSaga(),panelistSaga()]);
 }
 sagaMiddleware.run(rootSaga);

@@ -5,14 +5,17 @@ import { toast } from "react-toastify";
  * https://javascript.plainenglish.io/the-ultimate-javascript-fetch-api-cheatsheet-e60b98c8cdbe
  */
 
-const API_HOST = "http://bookingservices-env.eba-z3vieews.us-east-1.elasticbeanstalk.com";
+const API_HOST =
+  "http://bookingservice-env.eba-4t845urj.us-east-1.elasticbeanstalk.com";
 
 
 async function request(url, params, method = "GET", resType = "json") {
   const options = {
     method,
+    // mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
+      // "Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbGt1bWFyLmNoYWxsYTE0QGdtYWlsLmNvbSIsImlhdCI6MTY5NjIyODQ0NywiZXhwIjoxNjk2MjMwMjQ3fQ.ecHQrHsepPUe7-lblhWxx7Mz-3iMNwK708cMdcaSIw0"
     },
     credentials: "include",
   };
@@ -42,6 +45,7 @@ async function request(url, params, method = "GET", resType = "json") {
 
   try {
     const response = await fetch(API_HOST + url, options);
+    // console.log(response,'Chand');
     const result = resType === "json" ? await response.json() : response;
 
     if (response.status >= 400) {

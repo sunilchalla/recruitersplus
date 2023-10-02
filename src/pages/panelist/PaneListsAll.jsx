@@ -19,7 +19,7 @@ const PaneListaAll = () => {
                   <div className="row p-3">
                     <div className="col-md-7">
                       <h4>{`${panelist.firstName} ${panelist?.lastName}`}</h4>
-                      <p className="text-muted">Sr. UI UX Developer</p>
+                      <p className="text-muted">{panelist?.designation}</p>
                     </div>
                     <div className="col-md-5 text-right">
                       <span

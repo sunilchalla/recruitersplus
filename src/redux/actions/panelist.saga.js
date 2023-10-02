@@ -11,16 +11,23 @@ export const panelistSagaTypes = Object.freeze({
 });
 
 function* createPanelist(action) {
+  const user = yield select((store) => store.RECRUITER);
+  toast.info("Creating new panelist");
+  debugger
   try {
-    toast.info("Creating new Meeting");
     const response = yield call(() =>
-      panelistRepository.createPanelist(action.payload)
+      panelistRepository.createPanelist({
+        ...action.payload,
+        vendorId: user.vendorId,
+        submitterId: user.userId,
+        userId: user.userId,
+      })
     );
     if (response?.status === "error") {
-      return toast.error("unable to create job details. Please try again.");
+      return toast.error("unable to create panelist. Please try again.");
     } else {
       yield call(getAllPanelist);
-      toast.success("Job Details created Successfully");
+      toast.success("Panelist created Successfully");
     }
   } catch (e) {
     toast.error("An error occurred, please try again.");
@@ -41,9 +48,9 @@ function* getAllPanelist(action) {
   }
 }
 
-function* jobSaga() {
+function* panelistSaga() {
   yield takeEvery(panelistSagaTypes.CREATE_NEW_PANELIST, createPanelist);
   yield takeEvery(panelistSagaTypes.GET_ALL_PANELIST, getAllPanelist);
 }
 
-export default jobSaga;
+export default panelistSaga;

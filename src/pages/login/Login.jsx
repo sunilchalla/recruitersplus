@@ -1,19 +1,30 @@
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLock, faMobileScreenButton, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLock,
+  faMobileScreenButton,
+  faUserAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 import loginbanner from "../../assets/Rectangle 5.png";
+import { useDispatch } from "react-redux";
+import { initHistory } from "../../utilities/historyHandler";
 const Login = () => {
-  let navigate = useNavigate();
+  const history = useNavigate();
+  initHistory(history);
+  const dispatch = useDispatch();
+  const [loginObj, setLoginObj] = useState({});
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin();
-  }
+  };
   const handleLogin = () => {
+    dispatch({ type: "ATTEMPT_LOGIN", payload: loginObj });
+
     // Perform login logic
-  
   };
   return (
     <div>
@@ -36,6 +47,12 @@ const Login = () => {
                         placeholder="Enter Email Address"
                         aria-label="Username"
                         aria-describedby="basic-addon1"
+                        value={loginObj?.username}
+                        onChange={(e) =>
+                          setLoginObj((prev) => {
+                            return { ...prev, username: e.target.value };
+                          })
+                        }
                       />
                     </InputGroup>
                   </div>
@@ -50,6 +67,12 @@ const Login = () => {
                         placeholder="Enter Password"
                         aria-label="password"
                         aria-describedby="basic-addon1"
+                        value={loginObj?.password}
+                        onChange={(e) =>
+                          setLoginObj((prev) => {
+                            return { ...prev, password: e.target.value };
+                          })
+                        }
                       />
                     </InputGroup>
                   </div>

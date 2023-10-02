@@ -8,23 +8,25 @@ const actionTypes = Object.freeze({
 
 export default function recruiterReducer(
   state = {
-    userId: "RECR-1",
-    firstName: "Chandbasha",
-    lastName: "Shaik",
-    displayName: "Chand",
-    email: "shaikchandbasha@gmail.com",
-    phone: "+917386053148",
-    organization: "PULSAR Corp",
-    designation: "Senior Recruiter",
-    location: "Hyd",
-    category: "RECRUITER",
-    role: "ADMIN",
-    vendorId: "PULSA-29",
-    vendorName: "PULSAR Corp",
-    active: false,
-    token: "UQhDLTpeSz",
-    submitterId: "RECR-1",
-  },
+},
+  // {
+  //   userId: "RECR-1",
+  //   firstName: "Chandbasha",
+  //   lastName: "Shaik",
+  //   displayName: "Chand",
+  //   email: "shaikchandbasha@gmail.com",
+  //   phone: "+917386053148",
+  //   organization: "PULSAR Corp",
+  //   designation: "Senior Recruiter",
+  //   location: "Hyd",
+  //   category: "RECRUITER",
+  //   role: "ADMIN",
+  //   vendorId: "PULSA-29",
+  //   vendorName: "PULSAR Corp",
+  //   active: false,
+  //   token: "UQhDLTpeSz",
+  //   submitterId: "RECR-1",
+  // },
   action
 ) {
   switch (action.type) {

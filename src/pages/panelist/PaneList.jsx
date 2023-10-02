@@ -55,8 +55,9 @@ const PaneList = ({
     });
   };
 
-  
-
+  const onSave = () => { 
+    dispatch({ type: "CREATE_NEW_PANELIST", payload: panelist });
+   }
   return (
     <div className="container-fluid">
       <div className="py-3">
@@ -112,6 +113,7 @@ const PaneList = ({
               <button
                 type="button"
                 class="btn-close"
+                onClick={() => setPanelist({ category: "RECRUITER" })}
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -343,12 +345,17 @@ const PaneList = ({
                 </div>
               </div>
               <div className="text-center p-3">
-                <button type="button" class="rp-primary">
+                <button
+                  type="button"
+                  class="rp-primary"
+                  onClick={() => onSave()}
+                >
                   Add Panelist
                 </button>
                 <button
                   type="button"
                   class="rp-secondary"
+                  onClick={() => setPanelist({ category: "RECRUITER" })}
                   data-bs-dismiss="modal"
                 >
                   Close

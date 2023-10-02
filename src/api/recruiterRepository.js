@@ -2,7 +2,7 @@ import Fetch from "./Fetch";
 
 async function validateUser(loginObj) {
   // loginObj = { email:'string', password:'string' }
-  const response = await Fetch.post("/validateUser", loginObj);
+  const response = await Fetch.post("/authenticate", loginObj);
   return response;
 }
 
