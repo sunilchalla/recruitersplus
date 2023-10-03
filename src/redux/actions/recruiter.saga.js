@@ -30,32 +30,9 @@ function* attemptLogin(action) {
     );
     if (response) {
       console.log("login-response", response);
-      sessionStorage.setItem(
-        "user",
-        JSON.stringify({
-          userId: "RECR-1",
-          token:
-            "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbGt1bWFyLmNoYWxsYTE0QGdtYWlsLmNvbSIsImlhdCI6MTY5NjIzMDM2NSwiZXhwIjoxNjk2MjMyMTY1fQ.9krlMqlUfjqhFk6kP3X5U9AgWzRqc9Gq0B-47BFnN4g",
-          active: true,
-          email: "sunilkumar.challa14@gmail.com",
-          displayName: "sunilkumar.challa14@gmail.com",
-          category: "RECRUITER",
-          role: "ADMIN",
-          vendorId: "PULSA-3",
-        })
-      );
+      sessionStorage.setItem("user", JSON.stringify(response));
       yield put(
-        recruiterActions.setUser({
-          userId: "RECR-1",
-          token:
-            "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbGt1bWFyLmNoYWxsYTE0QGdtYWlsLmNvbSIsImlhdCI6MTY5NjIzMDM2NSwiZXhwIjoxNjk2MjMyMTY1fQ.9krlMqlUfjqhFk6kP3X5U9AgWzRqc9Gq0B-47BFnN4g",
-          active: true,
-          email: "sunilkumar.challa14@gmail.com",
-          displayName: "sunilkumar.challa14@gmail.com",
-          category: "RECRUITER",
-          role: "ADMIN",
-          vendorId: "PULSA-3",
-        })
+        recruiterActions.setUser(response)
       );
       setHistory("/dashboard");
     }

@@ -10,14 +10,16 @@ const API_HOST =
 
 
 async function request(url, params, method = "GET", resType = "json") {
+  const user = JSON.parse(sessionStorage.getItem('user'))
   const options = {
     method,
-    // mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
-      // "Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdW5pbGt1bWFyLmNoYWxsYTE0QGdtYWlsLmNvbSIsImlhdCI6MTY5NjIyODQ0NywiZXhwIjoxNjk2MjMwMjQ3fQ.ecHQrHsepPUe7-lblhWxx7Mz-3iMNwK708cMdcaSIw0"
+      "Access-Control-Allow-Origin":true,
+      // "Access-Control-Max-Age": 86400,
+      ...(user?.token && { Authorization: `Bearer ${user?.token}` }),
     },
-    credentials: "include",
+    // credentials: "include",
   };
 
   function objectToQueryString(obj) {
