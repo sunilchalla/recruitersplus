@@ -6,6 +6,7 @@ const CreateMeeting = React.lazy(() =>import("./pages/newMeeting/CreateMeeting")
 const JobDescription = React.lazy(() =>import("./pages/jobDescriptions/JobDescription"));
 const PaneList = React.lazy(() => import("./pages/panelist/PaneList"));
 const PreviewMeeting = React.lazy(()=>import("./pages/previewMeeting/PreviewMeeting"))
+const MyTeam = React.lazy(()=>import("./pages/myteam/MyTeam"))
 const appRoutes = [
   {
     path: "/login",
@@ -31,6 +32,11 @@ const appRoutes = [
     path: "/jobdescriptions",
     name: "Job Descriptions",
     component: JobDescription,
+  },
+  {
+    path: "/myteam",
+    name: "My Team",
+    component: MyTeam,
   },
   {
     path: "/panelist",

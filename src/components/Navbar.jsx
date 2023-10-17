@@ -30,6 +30,12 @@ const Navbar = () => {
       to: "/jobdescriptions",
       activeNavs: ["/jobdescriptions"],
     },
+    {
+      icon: faFileLines,
+      name: "My Team",
+      to: "/myteam",
+      activeNavs: ["/myteam"],
+    },
   ];
   const activePath = window.location.pathname;
   const dispatch = useDispatch()

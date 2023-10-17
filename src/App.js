@@ -11,7 +11,7 @@ import { initHistory } from "./utilities/historyHandler";
 
 function App() {
   // will update with actual user logged context
-  const isLoggedin = useSelector((store) => store?.RECRUITER?.vendorId); ;
+  const isLoggedin = useSelector((store) => store?.RECRUITER?.vendorId);
   const dispatch = useDispatch()
 
   useEffect(() => {
